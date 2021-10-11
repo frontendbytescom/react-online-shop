@@ -1,0 +1,250 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --color-text: #0d1321;
+    --color-back: #fcecc9;
+    --color-accent: #f93943;
+    --color-accent-light: #fcb0b3;
+    --color-secondary: #445e93;
+}
+
+/* @media (prefers-color-scheme: dark) {
+    :root {
+        --color-text: #fcecc9;
+        --color-back: #0d1321;
+    }
+} */
+
+/* GENERAL */
+
+html {
+    font: 16px / 1.6 "Montserrat", sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-back);
+}
+
+body {
+    margin: 0;
+}
+
+#root {
+    margin: 0 auto;
+    max-width: 55rem;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--color-accent);
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Courgette", cursive;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+img {
+    width: 100%;
+}
+
+#root > * + * {
+    margin-top: 2rem;
+}
+
+section {
+    padding: 3rem;
+}
+
+/* UTILITIES */
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+
+    font-size: 1.1rem;
+    color: var(--color-back);
+    background: var(--color-accent);
+    opacity: 1;
+
+    text-align: center;
+    text-decoration: none;
+
+    border: 0;
+    border-radius: 0.25rem;
+    transition: opacity 0.25s linear, transform 0.25s ease-in-out;
+}
+
+.btn:hover,
+.btn:focus {
+    opacity: 0.9;
+    transform: scale(0.85);
+    outline: none;
+}
+
+.btn-group {
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    padding: 1rem;
+    border: 1px solid;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-image {
+    margin: -1rem -1rem 1rem;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+}
+
+.card-body > * {
+    margin-bottom: 1.5rem;
+}
+.card-body > *:last-child {
+    margin-bottom: 0;
+}
+
+.card-body .price {
+    text-align: right;
+    font-weight: bold;
+}
+
+.card-body .btn {
+    margin-top: auto;
+}
+
+/* NAVIGATION */
+
+#logo {
+    color: var(--color-text);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    display: flex;
+    gap: 1em;
+}
+
+/* PROMOTION */
+
+.promotion {
+    position: relative;
+}
+
+.promotion h2 {
+    position: absolute;
+    font-size: 3em;
+    text-align: center;
+    transform-origin: center;
+    transform: translate(-1em, -0.5em) rotate(-7deg);
+    color: var(--color-accent);
+    text-shadow: 0 0.1em 0.15em var(--color-text);
+}
+
+.promotion .card {
+    flex-direction: row;
+}
+
+.promotion .card-image {
+    margin: -1rem 1rem -1.5rem -1rem;
+    max-width: 40%;
+}
+
+.promotion .card-body {
+    align-self: center;
+    text-align: right;
+}
+
+.promotion .card-body > * {
+    margin-bottom: 0.5rem;
+}
+
+.promotion .card-body > *:last-child {
+    margin-bottom: 0;
+}
+
+.promotion .card-body span,
+.promotion .card-body .old-price {
+    font-weight: bold;
+}
+
+.promotion .card-body .old-price {
+    text-decoration: line-through;
+    color: var(--color-secondary);
+}
+
+.promotion .card-body span {
+    color: var(--color-accent);
+    font-size: 1.1rem;
+}
+
+/* PRODUCTS */
+.products {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.products .btn-group {
+    grid-column: 1 / -1;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+footer p {
+    margin: 0.5em 0;
+}
